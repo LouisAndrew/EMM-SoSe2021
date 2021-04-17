@@ -5,9 +5,10 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
 
-  [SerializeField] private float _speed = .5f;
-  [SerializeField] private float _rotationSpeed = .25f;
+  [SerializeField] private float _speed = 1f;
+  [SerializeField] private float _rotationSpeed = .5f;
   [SerializeField] private float _baseAngle = 10;
+  private int score = 0;
   void Start()
   {
   }
@@ -24,5 +25,21 @@ public class Player : MonoBehaviour
 
     Vector3 targetDirection = new Vector3(Mathf.Sin(angle), 0, Mathf.Cos(angle));
     transform.rotation *= Quaternion.LookRotation(targetDirection);
+  }
+
+  void OnTriggerEnter(Collider other)
+  {
+    if (other.gameObject.CompareTag("Collectable"))
+    {
+      Debug.Log("entering collectable");
+      incrementScore();
+      GameObject.Destroy(other.gameObject);
+    }
+  }
+
+  void incrementScore()
+  {
+    score++;
+    Debug.Log("Score: " + score);
   }
 }
