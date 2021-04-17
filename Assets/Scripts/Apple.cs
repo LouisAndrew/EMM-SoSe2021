@@ -38,9 +38,6 @@ public class Apple : MonoBehaviour
         _isMovingUp = true;
       }
 
-      Debug.Log(_isMovingUp);
-      Debug.Log(posY);
-
       float direction = _isMovingUp ? 1 : -1;
       transform.position += new Vector3(0, _speed * direction * Time.deltaTime, 0);
     }
