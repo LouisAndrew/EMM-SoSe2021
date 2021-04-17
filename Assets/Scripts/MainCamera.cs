@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class MainCamera : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+  [SerializeField] private Transform target;
+  [SerializeField] private float _offsetZ = 5f;
+  void Start()
+  {
+  }
+
+  // Update is called once per frame
+  void Update()
+  {
+    Vector3 offsetVector = new Vector3(0, 1f, _offsetZ * -1);
+    Quaternion playerRotation = target.rotation;
+
+    Vector3 offsetRotated = playerRotation * offsetVector;
+    transform.position = target.position + offsetRotated;
+    transform.rotation = Quaternion.Slerp(transform.rotation, playerRotation, 0.5f);
+  }
 }
