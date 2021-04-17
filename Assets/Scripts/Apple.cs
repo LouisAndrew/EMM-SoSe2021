@@ -4,41 +4,45 @@ using UnityEngine;
 
 public class Apple : MonoBehaviour
 {
-    
-    [SerializeField] private float _angle = 30f;
-    [SerializeField] private float _multiplicator = 0.05f;
-    private bool _isGoingUp = true;
-    [SerializeField] private float _defaultPos = 1f; // Object.cs
 
-    void Start()
+  private bool _isMovingUp = true;
+  [SerializeField] private float _maxY = 0.05f;
+  [SerializeField] private float _minY = -0.05f;
+  [SerializeField] private float _speed = .05f;
+  private float _defaultPos = .7f; // apple default height (see Object.cs)
+  private bool _shouldTranslate = false; // sets if the object should be translated
+  // There's an apple underneath `Floor` object, so we don't want to also translate it
+  void Start()
+  {
+  }
+
+  void Update()
+  {
+
+    float posY = transform.position.y;
+
+    // check if the object should be translated 
+    if (posY == _defaultPos)
     {
-        // _defaultAngle = UnityEngine.Random.Range(0f, 360f);
+      _shouldTranslate = true;
     }
 
-    // Update is called once per frame
-    void Update()
+    if (_shouldTranslate)
     {
-        transform.Rotate(new Vector3(0f, Time.deltaTime * _angle, 0f), Space.World); // rotate angle per second.
+      if (posY >= _maxY + _defaultPos)
+      {
+        _isMovingUp = false;
+      }
+      else if (posY <= _minY + _defaultPos)
+      {
+        _isMovingUp = true;
+      }
 
-        if (_defaultPos >= 1.5f) 
-        {
-            _isGoingUp = false;
-        }
-        
-        if (_defaultPos <= 0.5f) {
-            _isGoingUp = true;
-        }
-        float translateValue;
-        if (_isGoingUp) {
-            translateValue = 1;
-        } else {
-            translateValue = -1;
-        }
-        _defaultPos += translateValue * _multiplicator;
+      Debug.Log(_isMovingUp);
+      Debug.Log(posY);
 
-        // Debug.Log(_defaultPos);
-        Debug.Log( translateValue * translateValue);
-
-        transform.Translate(new Vector3(0f, Time.deltaTime * translateValue * translateValue, 0f));
+      float direction = _isMovingUp ? 1 : -1;
+      transform.position += new Vector3(0, _speed * direction * Time.deltaTime, 0);
     }
+  }
 }
