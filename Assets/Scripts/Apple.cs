@@ -9,7 +9,7 @@ public class Apple : MonoBehaviour
   [SerializeField] private float _maxY = 0.05f;
   [SerializeField] private float _minY = -0.05f;
   [SerializeField] private float _speed = .05f;
-  private float _defaultPos = .7f; // apple default height (see Object.cs)
+  private float _defaultPos = .5f; // apple default height (see Object.cs)
   private bool _shouldTranslate = false; // sets if the object should be translated
   // There's an apple underneath `Floor` object, so we don't want to also translate it
   void Start()

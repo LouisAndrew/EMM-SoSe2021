@@ -12,7 +12,7 @@ public class Object : MonoBehaviour
   private float _minY = -5f;
   private float _maxY = 5f;
 
-  private float _floorTop = 0.7f; // 0.5 -> top of the floor. + 0.5 to simulate "floating" effect
+  private float _floorTop = 0.5f; // 0.2 to simulate "floating" effect
 
   void Start()
   {
