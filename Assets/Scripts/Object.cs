@@ -12,7 +12,10 @@ public class Object : MonoBehaviour
   private float _minY = -5f;
   private float _maxY = 5f;
 
+  [SerializeField]
   private float _floorTop = 0.5f; // 0.2 to simulate "floating" effect
+  [SerializeField]
+  private Transform parent;
 
   void Start()
   {
@@ -25,7 +28,11 @@ public class Object : MonoBehaviour
       Vector3 coordinate = new Vector3(coordinateX, _floorTop, coordinateY);
       if (!vectors.Contains(coordinate))
       {
-        Instantiate(myPrefab, coordinate, new Quaternion());
+        Transform obj = Instantiate(myPrefab, coordinate, new Quaternion());
+        if (parent)
+        {
+          obj.parent = parent;
+        }
         i++;
       }
     }

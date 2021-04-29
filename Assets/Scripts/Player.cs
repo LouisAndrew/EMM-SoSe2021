@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
   private int score = 0;
   void Start()
   {
+
   }
 
   void Update()
