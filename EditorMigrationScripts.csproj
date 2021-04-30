@@ -272,17 +272,17 @@
     <Reference Include="Unity.Analytics.StandardEvents">
         <HintPath>/Users/louis.andrew/htw/gmm/EMM - Project 1/Library/PackageCache/com.unity.analytics@3.5.3/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Analytics.Editor">
-        <HintPath>/Users/louis.andrew/htw/gmm/EMM - Project 1/Library/PackageCache/com.unity.analytics@3.5.3/Unity.Analytics.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Analytics.Tracker">
-        <HintPath>/Users/louis.andrew/htw/gmm/EMM - Project 1/Library/PackageCache/com.unity.analytics@3.5.3/Unity.Analytics.Tracker.dll</HintPath>
-    </Reference>
     <Reference Include="Vuforia.UnityExtensions.Editor">
         <HintPath>/Users/louis.andrew/htw/gmm/EMM - Project 1/Library/PackageCache/com.ptc.vuforia.engine@28847b1d9f/Vuforia/Plugins/Managed/Editor/Vuforia.UnityExtensions.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Analytics.Editor">
+        <HintPath>/Users/louis.andrew/htw/gmm/EMM - Project 1/Library/PackageCache/com.unity.analytics@3.5.3/Unity.Analytics.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Vuforia.UnityExtensions">
         <HintPath>/Users/louis.andrew/htw/gmm/EMM - Project 1/Library/PackageCache/com.ptc.vuforia.engine@28847b1d9f/Vuforia/Plugins/Managed/Runtime/Vuforia.UnityExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Analytics.Tracker">
+        <HintPath>/Users/louis.andrew/htw/gmm/EMM - Project 1/Library/PackageCache/com.unity.analytics@3.5.3/Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
         <HintPath>/Users/louis.andrew/htw/gmm/EMM - Project 1/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll</HintPath>

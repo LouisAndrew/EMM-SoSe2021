@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
   [SerializeField] private float _speed = 1f;
   [SerializeField] private float _rotationSpeed = .5f;
   [SerializeField] private float _baseAngle = 10;
+  // [SerializeField] private boolean 
   private int score = 0;
   void Start()
   {
