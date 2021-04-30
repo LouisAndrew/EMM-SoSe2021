@@ -8,7 +8,11 @@ public class Player : MonoBehaviour
   [SerializeField] private float _speed = 1f;
   [SerializeField] private float _rotationSpeed = .5f;
   [SerializeField] private float _baseAngle = 10;
-  // [SerializeField] private boolean 
+  [SerializeField] private bool useAr = false;
+
+  public float arMovementStep = 0.5f;
+  public float horizontalMovement = 0;
+  public float verticalMovement = 0;
   private int score = 0;
   void Start()
   {
@@ -17,8 +21,8 @@ public class Player : MonoBehaviour
 
   void Update()
   {
-    float moveHorizontal = Input.GetAxis("Horizontal"); // forward / back
-    float moveVertical = Input.GetAxis("Vertical"); // rotation
+    float moveHorizontal = useAr ? horizontalMovement : Input.GetAxis("Horizontal");
+    float moveVertical = useAr ? verticalMovement : Input.GetAxis("Vertical");
 
     float angle = moveHorizontal * _baseAngle * _rotationSpeed * Time.deltaTime;
     float direction = moveVertical * _speed * Time.deltaTime;
