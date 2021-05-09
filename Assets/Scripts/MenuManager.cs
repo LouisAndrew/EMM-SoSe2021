@@ -4,15 +4,27 @@ using UnityEngine;
 
 public class MenuManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+  [SerializeField]
+  private Transform Menu;
 
-    // Update is called once per frame
-    void Update()
+  private bool isMenuShowed = false;
+  void Start()
+  {
+    togglePauseMenu();
+  }
+
+  // Update is called once per frame
+  void Update()
+  {
+    if (Input.GetKeyDown(KeyCode.Escape))
     {
-        
+      isMenuShowed = !isMenuShowed;
+      togglePauseMenu();
     }
+  }
+
+  private void togglePauseMenu()
+  {
+    Menu.gameObject.SetActive(isMenuShowed);
+  }
 }
