@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
 
   }
 
-  void Update()
+  void FixedUpdate()
   {
     float moveHorizontal = useAr ? horizontalMovement : Input.GetAxis("Horizontal");
     float moveVertical = useAr ? verticalMovement : Input.GetAxis("Vertical");
