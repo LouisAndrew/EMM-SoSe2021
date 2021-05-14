@@ -284,6 +284,9 @@
     <Reference Include="Unity.Analytics.Tracker">
         <HintPath>/Users/louis.andrew/htw/gmm/EMM - Project 1/Library/PackageCache/com.unity.analytics@3.5.3/Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
+    <Reference Include="ICSharpCode.NRefactory">
+        <HintPath>/Users/louis.andrew/htw/gmm/EMM - Project 1/Library/PackageCache/com.unity.render-pipelines.core@10.4.0/Editor/ShaderGenerator/ICSharpCode.NRefactory.dll</HintPath>
+    </Reference>
     <Reference Include="nunit.framework">
         <HintPath>/Users/louis.andrew/htw/gmm/EMM - Project 1/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll</HintPath>
     </Reference>
