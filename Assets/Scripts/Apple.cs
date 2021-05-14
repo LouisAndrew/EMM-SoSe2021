@@ -19,7 +19,13 @@ public class Apple : MonoBehaviour
   void Start()
   {
     Transform parent = this.transform.parent;
-    vfx = parent.Find("CollectablesEffect").GetComponent<VisualEffect>();
+
+    Transform collectableEffect = parent.Find("CollectablesEffect");
+    if (collectableEffect)
+    {
+      vfx = collectableEffect.GetComponent<VisualEffect>();
+    }
+
   }
 
   void Update()
@@ -51,6 +57,7 @@ public class Apple : MonoBehaviour
 
   public void StopEffect()
   {
-    vfx.Stop();
+    if (vfx) { vfx.Stop(); }
+
   }
 }
