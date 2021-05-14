@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class Player : MonoBehaviour
 {
@@ -14,10 +15,6 @@ public class Player : MonoBehaviour
   public float horizontalMovement = 0;
   public float verticalMovement = 0;
   private int score = 0;
-  void Start()
-  {
-
-  }
 
   void FixedUpdate()
   {
@@ -39,7 +36,10 @@ public class Player : MonoBehaviour
     {
       Debug.Log("entering collectable");
       incrementScore();
-      GameObject.Destroy(other.gameObject);
+
+      GameObject collectable = other.gameObject;
+      collectable.GetComponent<Apple>().StopEffect();
+      GameObject.Destroy(collectable);
     }
   }
 
