@@ -436,11 +436,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ConversionMode: 0
---- !u!4 &426087252 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 400060, guid: 0d3c605385d6d9547a1e3f24e8248962, type: 3}
-  m_PrefabInstance: {fileID: 433235765}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &426087253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -453,7 +448,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cf8396085ca64c679d9346881457260, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 1
+  Speed: 2
   RotationAngle: 0
 --- !u!1001 &433235765
 PrefabInstance:
@@ -469,6 +464,18 @@ PrefabInstance:
     - target: {fileID: 400060, guid: 0d3c605385d6d9547a1e3f24e8248962, type: 3}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 400060, guid: 0d3c605385d6d9547a1e3f24e8248962, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 400060, guid: 0d3c605385d6d9547a1e3f24e8248962, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 400060, guid: 0d3c605385d6d9547a1e3f24e8248962, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 400060, guid: 0d3c605385d6d9547a1e3f24e8248962, type: 3}
       propertyPath: m_LocalPosition.x
@@ -532,8 +539,8 @@ GameObject:
   - component: {fileID: 526485704}
   - component: {fileID: 526485703}
   - component: {fileID: 526485702}
-  - component: {fileID: 526485701}
   - component: {fileID: 526485705}
+  - component: {fileID: 526485701}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -550,10 +557,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 526485700}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 929ab98d23f104d52bb5dbdbd396ac51, type: 3}
+  m_Script: {fileID: 11500000, guid: 394c9e2a3469a43aa927f3d17b024fa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 426087252}
   _offsetZ: 2
 --- !u!81 &526485702
 AudioListener:
