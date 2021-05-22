@@ -5,6 +5,7 @@ using Unity.Mathematics;
 
 public class CollectableBehaviorSystem : SystemBase
 {
+
   private BeginInitializationEntityCommandBufferSystem m_EntityCommandBufferSystem;
 
   protected override void OnCreate()
@@ -21,10 +22,17 @@ public class CollectableBehaviorSystem : SystemBase
     float3 playerPos = EntityManager.GetComponentData<Translation>(playerEntity).Value;
     float collisionDistance = 0.5f;
 
+    float time = Time.DeltaTime;
 
-
-    Entities.WithoutBurst().ForEach((ref Translation translation, ref Entity entity, ref CollectedComponent collectedComponent) =>
+    Entities.ForEach((ref Rotation rotation, ref CollectedComponent collectedComponent) =>
     {
+      quaternion q = quaternion.RotateY(180f * Mathf.Deg2Rad * time / 2);
+      rotation.Value = math.mul(rotation.Value, q);
+    }).Schedule();
+
+    Entities.WithoutBurst().ForEach((ref Translation translation, ref Rotation rotation, ref Entity entity, ref CollectedComponent collectedComponent) =>
+    {
+
       // collision detection
       float3 collectablePos = translation.Value;
       float distance = Unity.Mathematics.math.distance(playerPos, collectablePos);
