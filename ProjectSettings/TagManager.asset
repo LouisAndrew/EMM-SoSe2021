@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Collectable
   - BaseObject
+  - ScoreCount
   layers:
   - Default
   - TransparentFX
