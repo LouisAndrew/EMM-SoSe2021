@@ -53,6 +53,4 @@ public class PlayerBehaviorSystem : SystemBase
     return new float3(math.sin(angle), 0, math.cos(angle));
   }
 
-  void ChangePosition()
-  { }
 }
