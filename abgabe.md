@@ -1,7 +1,9 @@
 Link zu Github Repo: https://github.com/LouisAndrew/EMM-SoSe2021
 
-Bemerkung zum Feedback der 1. Abgabe:
+Bemerkung zu 3. Abgabe:
 
-Hallo Sebastian :),
+Hallo Sebastian,
 
-Vielen Dank für das Feedback. Meinst du, dass diese \_offsetZ ayf Y-Komponent gesetzt wird, wenn das Spiel noch nicht gestartet ist?
+Ich habe zwei Szenen für die 3. Abgabe: Abagbe3 und Abgabe3-ECS. Das Einsammeln von Collectables habe ich gemacht, aber nicht mit `Unity.Physics`, da ich immer Fehlermeldung bekomme, wenn ich die `Unity.Physics` importiere. Außerdem habe ich das "Restart" Button in Abgabe3-ECS Szene entfernt, da es nicht so ganz richtig mit dem gesamten ECS funktioniert.
+
+Schönen Tag noch.
