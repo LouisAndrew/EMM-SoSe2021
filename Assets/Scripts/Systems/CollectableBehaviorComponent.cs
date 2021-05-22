@@ -21,9 +21,9 @@ public class CollectableBehaviorSystem : SystemBase
     float3 playerPos = EntityManager.GetComponentData<Translation>(playerEntity).Value;
     float collisionDistance = 0.5f;
 
-    int score = 0;
 
-    Entities.ForEach((ref Translation translation, ref Entity entity, ref CollectedComponent collectedComponent) =>
+
+    Entities.WithoutBurst().ForEach((ref Translation translation, ref Entity entity, ref CollectedComponent collectedComponent) =>
     {
       // collision detection
       float3 collectablePos = translation.Value;
@@ -37,9 +37,19 @@ public class CollectableBehaviorSystem : SystemBase
 
       if (collectedComponent.IsCollected)
       {
-        score++;
+        UpdateScore();
         commandBuffer.DestroyEntity(entity);
       }
     }).Run();
+  }
+
+  void UpdateScore()
+  {
+    Entity scoreEntity = GetEntityQuery(typeof(ScoreComponent)).GetSingletonEntity();
+    int curentScore = EntityManager.GetComponentData<ScoreComponent>(scoreEntity).CurrentScore;
+    EntityManager.SetComponentData(scoreEntity, new ScoreComponent
+    {
+      CurrentScore = curentScore + 1
+    });
   }
 }
