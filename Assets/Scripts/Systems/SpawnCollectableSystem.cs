@@ -47,9 +47,14 @@ public class SpawnCollectableSystem : SystemBase
         float coordinateX = random.NextFloat(posX.min, posX.max);
         float coordinateY = random.NextFloat(posY.min, posY.max);
         float3 pos = new float3(coordinateX, floorTop, coordinateY);
+
         commandBuffer.SetComponent(entityInQueryIndex, entityInstance, new Translation
         {
           Value = pos
+        });
+        commandBuffer.SetComponent(entityInQueryIndex, entityInstance, new CollectedComponent
+        {
+          IsCollected = false
         });
       }
 
